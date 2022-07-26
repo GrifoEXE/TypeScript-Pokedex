@@ -1,22 +1,22 @@
 const container: HTMLElement = document.getElementById("app")!;
 const numOfPokemon: number = 151;
 
-
 interface IPokemon {
 	id: number;
 	name: string;
 	image: string;
 	type: string;
+	url: string;
 }
 
 const showPokemon = (pokemon: IPokemon): void => {
 	let output: string = `
-        <div class="card">
+        <a class="card" href = "https://www.pokemon.com/br/pokedex/${pokemon.name}" target="_blank">
             <span class="card--id">#${pokemon.id}</span>
             <img class="card--image" src=${pokemon.image} alt=${pokemon.name} />
             <h1 class="card--name">${pokemon.name}</h1>
             <span class="card--details">${pokemon.type}</span>
-        </div>
+        </a>
     `;
 	container.innerHTML += output;
 };
@@ -33,6 +33,7 @@ const getPokemon = async (id: number): Promise<void> => {
 		name: pokemon.name,
 		image: `${pokemon.sprites.front_default}`,
 		type: pokemonType,
+		url: `${pokemon.species.url}`,
 	};
 
 	showPokemon(dadosPokemon);
@@ -44,5 +45,3 @@ const fetchData = (): void => {
 	}
 };
 fetchData();
-
-

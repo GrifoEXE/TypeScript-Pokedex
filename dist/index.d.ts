@@ -5,6 +5,7 @@ interface IPokemon {
     name: string;
     image: string;
     type: string;
+    url: string;
 }
 declare const showPokemon: (pokemon: IPokemon) => void;
 declare const getPokemon: (id: number) => Promise<void>;

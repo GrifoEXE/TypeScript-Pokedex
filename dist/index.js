@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var container = document.getElementById("app");
 var numOfPokemon = 151;
 var showPokemon = function (pokemon) {
-    var output = "\n        <div class=\"card\">\n            <span class=\"card--id\">#".concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--details\">").concat(pokemon.type, "</span>\n        </div>\n    ");
+    var output = "\n        <a class=\"card\" href = \"https://www.pokemon.com/br/pokedex/".concat(pokemon.name, "\" target=\"_blank\">\n            <span class=\"card--id\">#").concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--details\">").concat(pokemon.type, "</span>\n        </a>\n    ");
     container.innerHTML += output;
 };
 var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, function () {
@@ -58,7 +58,8 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
                     id: pokemon.id,
                     name: pokemon.name,
                     image: "".concat(pokemon.sprites.front_default),
-                    type: pokemonType
+                    type: pokemonType,
+                    url: "".concat(pokemon.species.url)
                 };
                 showPokemon(dadosPokemon);
                 return [2 /*return*/];
