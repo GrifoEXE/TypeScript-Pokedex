@@ -1,5 +1,5 @@
 const container: HTMLElement = document.getElementById("app")!;
-const pokemons: number = 100;
+const numOfPokemon: number = 151;
 
 interface IPokemon {
 	id: number;
@@ -27,20 +27,21 @@ const getPokemon = async (id: number): Promise<void> => {
 		.map((poke: any) => poke.type.name.toUpperCase())
 		.join(" | ");
 
-	const transformedPokemon = {
+	const dadosPokemon = {
 		id: pokemon.id,
 		name: pokemon.name,
 		image: `${pokemon.sprites.front_default}`,
 		type: pokemonType,
 	};
 
-	showPokemon(transformedPokemon);
+	showPokemon(dadosPokemon);
 };
 
 const fetchData = (): void => {
-	for (let i = 1; i <= pokemons; i++) {
+	for (let i = 1; i <= numOfPokemon; i++) {
 		getPokemon(i);
 	}
 };
-
 fetchData();
+
+

@@ -36,13 +36,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var container = document.getElementById("app");
-var pokemons = 100;
+var numOfPokemon = 151;
+var listaPokemon = [];
 var showPokemon = function (pokemon) {
     var output = "\n        <div class=\"card\">\n            <span class=\"card--id\">#".concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--details\">").concat(pokemon.type, "</span>\n        </div>\n    ");
     container.innerHTML += output;
 };
 var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, function () {
-    var data, pokemon, pokemonType, transformedPokemon;
+    var data, pokemon, pokemonType, dadosPokemon;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(id))];
@@ -54,21 +55,28 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
                 pokemonType = pokemon.types
                     .map(function (poke) { return poke.type.name.toUpperCase(); })
                     .join(" | ");
-                transformedPokemon = {
+                dadosPokemon = {
                     id: pokemon.id,
                     name: pokemon.name,
                     image: "".concat(pokemon.sprites.front_default),
                     type: pokemonType
                 };
-                showPokemon(transformedPokemon);
+                showPokemon(dadosPokemon);
                 return [2 /*return*/];
         }
     });
 }); };
+//criar array de pokémons pra sortar antes de showPokemon
 var fetchData = function () {
-    for (var i = 1; i <= pokemons; i++) {
+    for (var i = 1; i <= numOfPokemon; i++) {
         getPokemon(i);
     }
 };
 fetchData();
+//sort pokémon by id
+// const sortById = (): void => {
+// 	listaPokemon.sort((a: IPokemon, b: IPokemon) => a.id - b.id);
+// }
+// sortById();
+// console.log(listaPokemon);
 //# sourceMappingURL=index.js.map
