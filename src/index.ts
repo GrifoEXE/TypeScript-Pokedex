@@ -27,7 +27,9 @@ const getPokemon = async (id: number): Promise<void> => {
 	const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 	const pokemon: any = await data.json();
 	const pokemonType1: string = pokemon.types[0].type.name;
-	const pokemonType2: string = pokemon.types[1] ? pokemon.types[1].type.name : "";
+	const pokemonType2: string = pokemon.types[1]
+		? pokemon.types[1].type.name
+		: "";
 
 	if (pokemonType2 != null) {
 		const dadosPokemon = {
@@ -56,4 +58,5 @@ const fetchData = (): void => {
 		getPokemon(i);
 	}
 };
+
 fetchData();

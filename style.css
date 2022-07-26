@@ -22,42 +22,42 @@ main > h1 {
 	text-align: center;
 	color: #e43939;
 	font-size: 3rem;
-    margin-top: auto;
+	margin-top: auto;
 	text-transform: uppercase;
 }
 
-h3{
-    text-align: center;
-    color: #efaaaa;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+h3 {
+	text-align: center;
+	color: #efaaaa;
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
 }
 
 a {
 	text-decoration: none;
 }
 
-#numOfPokemon{
+#numOfPokemon {
 	margin-bottom: 1rem;
 }
 
 #TypeScriptIcon {
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-    display: inline;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	display: block;
+	margin-bottom: 0.5rem;
+	display: inline;
 }
 
 #PokeballIcon {
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-    align-content: center;
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	display: block;
+	margin-bottom: 0.5rem;
+	align-content: center;
 }
 
 #app {
@@ -115,10 +115,9 @@ a {
 .card--details {
 	font-size: 1.3rem;
 	color: #db8b80;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
 }
 
 .card--type--grass {
@@ -170,7 +169,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--dragon{
+.card--type--dragon {
 	background: #6f35fc;
 	color: #fff;
 	padding: 0.1rem;
@@ -186,7 +185,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--psychic{
+.card--type--psychic {
 	background: #f95587;
 	color: #fff;
 	padding: 0.1rem;
@@ -194,7 +193,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--poison{
+.card--type--poison {
 	background: #a33ea1;
 	color: #fff;
 	padding: 0.1rem;
@@ -202,7 +201,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--fighting{
+.card--type--fighting {
 	background: #c22e2e;
 	color: #fff;
 	padding: 0.1rem;
@@ -210,7 +209,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--rock{
+.card--type--rock {
 	background: #b8a038;
 	color: #fff;
 	padding: 0.1rem;
@@ -218,7 +217,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--ground{
+.card--type--ground {
 	background: #e2bf65;
 	color: #fff;
 	padding: 0.1rem;
@@ -226,7 +225,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--flying{
+.card--type--flying {
 	background: #a982d0;
 	color: #fff;
 	padding: 0.1rem;
@@ -234,7 +233,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--steel{
+.card--type--steel {
 	background: #b0b7bd;
 	color: #fff;
 	padding: 0.1rem;
@@ -242,15 +241,15 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card-type--ice{
+.card-type--ice {
 	background: #14f5ee;
 	color: #fff;
-	padding: 0.2rem;
+	padding: 0.1rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
 }
 
-.card--type--bug{
+.card--type--bug {
 	background: #a6b91a;
 	color: #fff;
 	padding: 0.1rem;
@@ -258,7 +257,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--ghost{
+.card--type--ghost {
 	background: #7b62a3;
 	color: #fff;
 	padding: 0.1rem;
@@ -266,7 +265,7 @@ a {
 	margin-right: 0.5rem;
 }
 
-.card--type--dark{
+.card--type--dark {
 	background: #705746;
 	color: #fff;
 	padding: 0.1rem;
