@@ -1,6 +1,7 @@
 const container: HTMLElement = document.getElementById("app")!;
 const numOfPokemon: number = 151;
 
+
 interface IPokemon {
 	id: number;
 	name: string;

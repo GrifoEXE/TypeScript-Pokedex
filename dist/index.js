@@ -37,7 +37,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var container = document.getElementById("app");
 var numOfPokemon = 151;
-var listaPokemon = [];
 var showPokemon = function (pokemon) {
     var output = "\n        <div class=\"card\">\n            <span class=\"card--id\">#".concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--details\">").concat(pokemon.type, "</span>\n        </div>\n    ");
     container.innerHTML += output;
@@ -66,17 +65,10 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
         }
     });
 }); };
-//criar array de pokémons pra sortar antes de showPokemon
 var fetchData = function () {
     for (var i = 1; i <= numOfPokemon; i++) {
         getPokemon(i);
     }
 };
 fetchData();
-//sort pokémon by id
-// const sortById = (): void => {
-// 	listaPokemon.sort((a: IPokemon, b: IPokemon) => a.id - b.id);
-// }
-// sortById();
-// console.log(listaPokemon);
 //# sourceMappingURL=index.js.map

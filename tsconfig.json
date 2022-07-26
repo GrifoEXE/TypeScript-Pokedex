@@ -5,10 +5,10 @@
 		"jsx": "preserve",
 		"esModuleInterop": true,
 		"sourceMap": true,
-		"allowJs": true,
-		"lib": ["es6", "dom"],
+		"declaration": true, /* Generates corresponding '.d.ts' file. */
+		"lib": ["es6", "dom", "ESNext.Array"],
 		"rootDir": "src",
 		"outDir": "dist",
-		"moduleResolution": "node"
+		"experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
 	}
 }
