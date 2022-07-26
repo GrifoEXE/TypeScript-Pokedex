@@ -38,11 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var container = document.getElementById("app");
 var numOfPokemon = 151;
 var showPokemon = function (pokemon) {
-    var output = "\n        <a class=\"card\" href = \"https://www.pokemon.com/br/pokedex/".concat(pokemon.name, "\" target=\"_blank\">\n            <span class=\"card--id\">#").concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--details\">").concat(pokemon.type, "</span>\n        </a>\n    ");
+    var output = "\n        <a class=\"card\" href = \"https://www.pokemon.com/br/pokedex/".concat(pokemon.name, "\" target=\"_blank\">\n            <span class=\"card--id\">#").concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--type--").concat(pokemon.type1, "\">").concat(pokemon.type1, "</span>\n\t\t\t<span class=\"card--type--").concat(pokemon.type2, "\">").concat(pokemon.type2, "</span>\n        </a>\n    ");
     container.innerHTML += output;
 };
 var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, function () {
-    var data, pokemon, pokemonType, dadosPokemon;
+    var data, pokemon, pokemonType1, pokemonType2, dadosPokemon, dadosPokemon;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(id))];
@@ -51,17 +51,29 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
                 return [4 /*yield*/, data.json()];
             case 2:
                 pokemon = _a.sent();
-                pokemonType = pokemon.types
-                    .map(function (poke) { return poke.type.name.toUpperCase(); })
-                    .join(" | ");
-                dadosPokemon = {
-                    id: pokemon.id,
-                    name: pokemon.name,
-                    image: "".concat(pokemon.sprites.front_default),
-                    type: pokemonType,
-                    url: "".concat(pokemon.species.url)
-                };
-                showPokemon(dadosPokemon);
+                pokemonType1 = pokemon.types[0].type.name;
+                pokemonType2 = pokemon.types[1] ? pokemon.types[1].type.name : "";
+                if (pokemonType2 != null) {
+                    dadosPokemon = {
+                        id: pokemon.id,
+                        name: pokemon.name,
+                        image: "".concat(pokemon.sprites.front_default),
+                        type1: pokemonType1,
+                        type2: pokemonType2,
+                        url: "".concat(pokemon.species.url)
+                    };
+                    showPokemon(dadosPokemon);
+                }
+                else {
+                    dadosPokemon = {
+                        id: pokemon.id,
+                        name: pokemon.name,
+                        image: "".concat(pokemon.sprites.front_default),
+                        type1: pokemonType1,
+                        url: "".concat(pokemon.species.url)
+                    };
+                    showPokemon(dadosPokemon);
+                }
                 return [2 /*return*/];
         }
     });

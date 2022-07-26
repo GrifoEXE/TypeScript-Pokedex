@@ -5,7 +5,8 @@ interface IPokemon {
 	id: number;
 	name: string;
 	image: string;
-	type: string;
+	type1: string;
+	type2?: string;
 	url: string;
 }
 
@@ -15,7 +16,8 @@ const showPokemon = (pokemon: IPokemon): void => {
             <span class="card--id">#${pokemon.id}</span>
             <img class="card--image" src=${pokemon.image} alt=${pokemon.name} />
             <h1 class="card--name">${pokemon.name}</h1>
-            <span class="card--details">${pokemon.type}</span>
+            <span class="card--type--${pokemon.type1}">${pokemon.type1}</span>
+			<span class="card--type--${pokemon.type2}">${pokemon.type2}</span>
         </a>
     `;
 	container.innerHTML += output;
@@ -24,19 +26,29 @@ const showPokemon = (pokemon: IPokemon): void => {
 const getPokemon = async (id: number): Promise<void> => {
 	const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 	const pokemon: any = await data.json();
-	const pokemonType: string = pokemon.types
-		.map((poke: any) => poke.type.name.toUpperCase())
-		.join(" | ");
+	const pokemonType1: string = pokemon.types[0].type.name;
+	const pokemonType2: string = pokemon.types[1] ? pokemon.types[1].type.name : "";
 
-	const dadosPokemon = {
-		id: pokemon.id,
-		name: pokemon.name,
-		image: `${pokemon.sprites.front_default}`,
-		type: pokemonType,
-		url: `${pokemon.species.url}`,
-	};
-
-	showPokemon(dadosPokemon);
+	if (pokemonType2 != null) {
+		const dadosPokemon = {
+			id: pokemon.id,
+			name: pokemon.name,
+			image: `${pokemon.sprites.front_default}`,
+			type1: pokemonType1,
+			type2: pokemonType2,
+			url: `${pokemon.species.url}`,
+		};
+		showPokemon(dadosPokemon);
+	} else {
+		const dadosPokemon = {
+			id: pokemon.id,
+			name: pokemon.name,
+			image: `${pokemon.sprites.front_default}`,
+			type1: pokemonType1,
+			url: `${pokemon.species.url}`,
+		};
+		showPokemon(dadosPokemon);
+	}
 };
 
 const fetchData = (): void => {

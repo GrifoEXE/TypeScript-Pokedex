@@ -34,6 +34,10 @@ h3{
     text-transform: uppercase;
 }
 
+a {
+	text-decoration: none;
+}
+
 #numOfPokemon{
 	margin-bottom: 1rem;
 }
@@ -115,4 +119,157 @@ h3{
     margin-bottom: 0.5rem;
     text-align: center;
 
+}
+
+.card--type--grass {
+	background: #7bc8a4;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--grass {
+	background: #7bc8a4;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+	font-weight: bold;
+}
+
+.card--type--fire {
+	background: #f08030;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--water {
+	background: #6390d8;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--electric {
+	background: #f7d02c;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--normal {
+	background: #a8a878;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--dragon{
+	background: #6f35fc;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--fairy {
+	background: #f4b0f4;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--psychic{
+	background: #f95587;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--poison{
+	background: #a33ea1;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--fighting{
+	background: #c22e2e;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--rock{
+	background: #b8a038;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--ground{
+	background: #e2bf65;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--flying{
+	background: #a982d0;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--steel{
+	background: #b0b7bd;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card-type--ice{
+	background: #14f5ee;
+	color: #fff;
+	padding: 0.2rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--bug{
+	background: #a6b91a;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--ghost{
+	background: #7b62a3;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
+}
+
+.card--type--dark{
+	background: #705746;
+	color: #fff;
+	padding: 0.1rem;
+	border-radius: 10px;
+	margin-right: 0.5rem;
 }
