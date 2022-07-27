@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press Start 2P:wght@400;700&display=swap");
 
 * {
 	margin: 0;
@@ -9,7 +9,7 @@
 body {
 	background: #333;
 	line-height: 1.5;
-	font-family: "Roboto", sans-serif;
+	font-family: "Press Start 2P", sans-serif;
 }
 
 main {
@@ -93,7 +93,7 @@ a {
 	width: 3rem;
 	color: #333;
 	padding: 0.1rem;
-	font-weight: 700;
+	font-weight: 400;
 	position: absolute;
 	border-radius: 0 0 10px 0;
 	top: 0;
@@ -102,8 +102,9 @@ a {
 .card--name {
 	text-transform: capitalize;
 	color: #fff;
-	font-size: 2rem;
-	font-weight: 700;
+	font-size: 1rem;
+	font-weight: 500;
+	text-align: center;
 }
 
 .card--image {
@@ -120,155 +121,219 @@ a {
 	text-align: center;
 }
 
-.card--type--grass {
-	background: #7bc8a4;
-	color: #fff;
-	padding: 0.1rem;
-	border-radius: 10px;
-	margin-right: 0.5rem;
-}
 
 .card--type--grass {
 	background: #7bc8a4;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
-	font-weight: bold;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--fire {
 	background: #f08030;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--water {
 	background: #6390d8;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--electric {
 	background: #f7d02c;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--normal {
 	background: #a8a878;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--dragon {
 	background: #6f35fc;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--fairy {
 	background: #f4b0f4;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--psychic {
 	background: #f95587;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--poison {
 	background: #a33ea1;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--fighting {
 	background: #c22e2e;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--rock {
 	background: #b8a038;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--ground {
 	background: #e2bf65;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--flying {
 	background: #a982d0;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--steel {
 	background: #b0b7bd;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card-type--ice {
 	background: #14f5ee;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--bug {
 	background: #a6b91a;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--ghost {
 	background: #7b62a3;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }
 
 .card--type--dark {
 	background: #705746;
 	color: #fff;
-	padding: 0.1rem;
+	padding: 0.3rem;
 	border-radius: 10px;
 	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	text-transform: capitalize;
 }

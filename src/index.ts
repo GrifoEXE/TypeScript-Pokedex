@@ -8,6 +8,13 @@ interface IPokemon {
 	type1: string;
 	type2?: string;
 	url: string;
+	move1: pokemonMove;
+}
+
+interface pokemonMove {
+	name: string;
+	type: string;
+	power: number;
 }
 
 const showPokemon = (pokemon: IPokemon): void => {
@@ -18,6 +25,7 @@ const showPokemon = (pokemon: IPokemon): void => {
             <h1 class="card--name">${pokemon.name}</h1>
             <span class="card--type--${pokemon.type1}">${pokemon.type1}</span>
 			<span class="card--type--${pokemon.type2}">${pokemon.type2}</span>
+			<span class="card--type--${pokemon.move1.type}">${pokemon.move1.power}</span>
         </a>
     `;
 	container.innerHTML += output;
@@ -30,6 +38,21 @@ const getPokemon = async (id: number): Promise<void> => {
 	const pokemonType2: string = pokemon.types[1]
 		? pokemon.types[1].type.name
 		: "";
+	const pokemonMove: pokemonMove = {
+		name: 'attack',
+		type: pokemonType1,
+		power: Math.round(Math.random()*1000)
+	};
+	// const pokemonMove3: pokemonMove = {
+	// 	name: pokemon.moves[2].move.name,
+	// 	type: pokemon.moves[2].move.type.name,
+	// 	power: pokemon.moves[2].move.power,
+	// };
+	// const pokemonMove4: pokemonMove = {
+	// 	name: pokemon.moves[3].move.name,
+	// 	type: pokemon.moves[3].move.type.name,
+	// 	power: pokemon.moves[3].move.power,
+	// };
 
 	if (pokemonType2 != null) {
 		const dadosPokemon = {
@@ -39,6 +62,7 @@ const getPokemon = async (id: number): Promise<void> => {
 			type1: pokemonType1,
 			type2: pokemonType2,
 			url: `${pokemon.species.url}`,
+			move1: pokemonMove,
 		};
 		showPokemon(dadosPokemon);
 	} else {
@@ -48,6 +72,7 @@ const getPokemon = async (id: number): Promise<void> => {
 			image: `${pokemon.sprites.front_default}`,
 			type1: pokemonType1,
 			url: `${pokemon.species.url}`,
+			move1: pokemonMove,
 		};
 		showPokemon(dadosPokemon);
 	}
