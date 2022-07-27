@@ -58,7 +58,7 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
                 pokemonMove = {
                     name: 'attack',
                     type: pokemonType1,
-                    power: Math.round(Math.random() * 1000)
+                    power: (Math.round(Math.random() * 1000))
                 };
                 // const pokemonMove3: pokemonMove = {
                 // 	name: pokemon.moves[2].move.name,
