@@ -36,7 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var container = document.getElementById("app");
-var numOfPokemon = 151;
+var numOfPokemonInput = document.getElementById("numOfPokemon");
+numOfPokemonInput.addEventListener("change", function () {
+    var numOfPokemon = Number(numOfPokemonInput.value);
+    container.innerHTML = "";
+    fetchData(numOfPokemon);
+});
 var showPokemon = function (pokemon) {
     var output = "\n        <a class=\"card\" href = \"https://www.pokemon.com/br/pokedex/".concat(pokemon.name, "\" target=\"_blank\">\n            <span class=\"card--id\">#").concat(pokemon.id, "</span>\n            <img class=\"card--image\" src=").concat(pokemon.image, " alt=").concat(pokemon.name, " />\n            <h1 class=\"card--name\">").concat(pokemon.name, "</h1>\n            <span class=\"card--type--").concat(pokemon.type1, "\">").concat(pokemon.type1, "</span>\n\t\t\t<span class=\"card--type--").concat(pokemon.type2, "\">").concat(pokemon.type2, "</span>\n\t\t\t<span class=\"card--type--").concat(pokemon.move1.type, "\">").concat(pokemon.move1.power, "</span>\n        </a>\n    ");
     container.innerHTML += output;
@@ -60,16 +65,6 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
                     type: pokemonType1,
                     power: (Math.round(Math.random() * 1000))
                 };
-                // const pokemonMove3: pokemonMove = {
-                // 	name: pokemon.moves[2].move.name,
-                // 	type: pokemon.moves[2].move.type.name,
-                // 	power: pokemon.moves[2].move.power,
-                // };
-                // const pokemonMove4: pokemonMove = {
-                // 	name: pokemon.moves[3].move.name,
-                // 	type: pokemon.moves[3].move.type.name,
-                // 	power: pokemon.moves[3].move.power,
-                // };
                 if (pokemonType2 != null) {
                     dadosPokemon = {
                         id: pokemon.id,
@@ -97,10 +92,9 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
         }
     });
 }); };
-var fetchData = function () {
+var fetchData = function (numOfPokemon) {
     for (var i = 1; i <= numOfPokemon; i++) {
         getPokemon(i);
     }
 };
-fetchData();
 //# sourceMappingURL=index.js.map

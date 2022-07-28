@@ -1,5 +1,11 @@
 const container: HTMLElement = document.getElementById("app")!;
-const numOfPokemon: number = 151;
+const numOfPokemonInput: HTMLInputElement = document.getElementById("numOfPokemon")! as HTMLInputElement;
+
+numOfPokemonInput.addEventListener("change", (): void => {
+	const numOfPokemon = Number(numOfPokemonInput.value);
+	container.innerHTML = "";
+	fetchData(numOfPokemon);
+});
 
 interface IPokemon {
 	id: number;
@@ -68,10 +74,10 @@ const getPokemon = async (id: number): Promise<void> => {
 	}
 };
 
-const fetchData = (): void => {
+const fetchData = (numOfPokemon : number): void => {
 	for (let i = 1; i <= numOfPokemon; i++) {
 		getPokemon(i);
 	}
 };
 
-fetchData();
+
