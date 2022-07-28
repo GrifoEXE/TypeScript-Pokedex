@@ -43,16 +43,6 @@ const getPokemon = async (id: number): Promise<void> => {
 		type: pokemonType1,
 		power: (Math.round(Math.random()*1000))
 	};
-	// const pokemonMove3: pokemonMove = {
-	// 	name: pokemon.moves[2].move.name,
-	// 	type: pokemon.moves[2].move.type.name,
-	// 	power: pokemon.moves[2].move.power,
-	// };
-	// const pokemonMove4: pokemonMove = {
-	// 	name: pokemon.moves[3].move.name,
-	// 	type: pokemon.moves[3].move.type.name,
-	// 	power: pokemon.moves[3].move.power,
-	// };
 
 	if (pokemonType2 != null) {
 		const dadosPokemon = {
