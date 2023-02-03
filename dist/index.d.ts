@@ -1,5 +1,6 @@
 declare const container: HTMLElement;
 declare const numOfPokemonInput: HTMLInputElement;
+declare const selectType: HTMLSelectElement;
 interface IPokemon {
     id: number;
     name: string;
@@ -16,4 +17,6 @@ interface pokemonMove {
 }
 declare const showPokemon: (pokemon: IPokemon) => void;
 declare const getPokemon: (id: number) => Promise<void>;
+declare const getPokemonByType: (id: number, pokemonType: string) => Promise<void>;
 declare const fetchData: (numOfPokemon: number) => void;
+declare const fetchDataByType: (numOfPokemon: number) => void;

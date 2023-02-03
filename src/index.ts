@@ -1,8 +1,24 @@
 const container: HTMLElement = document.getElementById("app")!;
-const numOfPokemonInput: HTMLInputElement = document.getElementById("numOfPokemon")! as HTMLInputElement;
+const numOfPokemonInput: HTMLInputElement = document.getElementById(
+	"numOfPokemon"
+)! as HTMLInputElement;
+const selectType: HTMLSelectElement = document.getElementById(
+	"TypeFilter"
+)! as HTMLSelectElement;
+
+selectType.addEventListener("change", (): void => {
+	container.innerHTML = "";
+	const numOfPokemon: number = Number(numOfPokemonInput.value);
+	const selectedType = selectType.value;
+	if(selectedType !== "null"){
+		fetchDataByType(numOfPokemon);
+	} else{
+		fetchData(numOfPokemon);
+	}
+});
 
 numOfPokemonInput.addEventListener("change", (): void => {
-	const numOfPokemon = Number(numOfPokemonInput.value);
+	const numOfPokemon: number = Number(numOfPokemonInput.value);
 	container.innerHTML = "";
 	fetchData(numOfPokemon);
 });
@@ -45,11 +61,11 @@ const getPokemon = async (id: number): Promise<void> => {
 		? pokemon.types[1].type.name
 		: "";
 	const pokemonMove: pokemonMove = {
-		name: 'attack',
+		name: "attack",
 		type: pokemonType1,
-		power: (Math.round(Math.random()*1000))
+		power: Math.round(Math.random() * 100),
 	};
-
+	const selectedType = selectType.value;
 	if (pokemonType2 != null) {
 		const dadosPokemon = {
 			id: pokemon.id,
@@ -74,10 +90,46 @@ const getPokemon = async (id: number): Promise<void> => {
 	}
 };
 
-const fetchData = (numOfPokemon : number): void => {
-	for (let i = 1; i <= numOfPokemon; i++) {
-		getPokemon(i);
+const getPokemonByType = async (
+	id: number,
+	pokemonType: string
+): Promise<void> => {
+	const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+	const pokemon: any = await data.json();
+	const pokemonType1: string = pokemon.types[0].type.name;
+	const pokemonType2: string = pokemon.types[1]
+		? pokemon.types[1].type.name
+		: "";
+	const pokemonMove: pokemonMove = {
+		name: "attack",
+		type: pokemonType1,
+		power: Math.round(Math.random() * 100),
+	};
+	const selectedType = pokemonType;
+
+	if (selectedType !== "null") {
+		if (pokemonType1 === selectedType || pokemonType2 === selectedType) {
+			const dadosPokemon = {
+				id: pokemon.id,
+				name: pokemon.name,
+				image: `${pokemon.sprites.front_default}`,
+				type1: pokemonType1,
+				type2: pokemonType2,
+				url: `${pokemon.species.url}`,
+				move1: pokemonMove,
+			};
+			showPokemon(dadosPokemon);
+		}
 	}
 };
 
-
+const fetchData = (numOfPokemon: number): void => {
+	for (let i = 1; i <= numOfPokemon; i++) {
+		getPokemon(i);
+	}
+}
+const fetchDataByType = (numOfPokemon: number): void => {
+	for (let i = 1; i <= numOfPokemon; i++) {
+		getPokemonByType(i, selectType.value);
+	}
+};

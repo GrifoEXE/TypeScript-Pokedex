@@ -37,6 +37,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var container = document.getElementById("app");
 var numOfPokemonInput = document.getElementById("numOfPokemon");
+var selectType = document.getElementById("TypeFilter");
+selectType.addEventListener("change", function () {
+    container.innerHTML = "";
+    var numOfPokemon = Number(numOfPokemonInput.value);
+    var selectedType = selectType.value;
+    if (selectedType !== "null") {
+        fetchDataByType(numOfPokemon);
+    }
+    else {
+        fetchData(numOfPokemon);
+    }
+});
 numOfPokemonInput.addEventListener("change", function () {
     var numOfPokemon = Number(numOfPokemonInput.value);
     container.innerHTML = "";
@@ -47,7 +59,7 @@ var showPokemon = function (pokemon) {
     container.innerHTML += output;
 };
 var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, function () {
-    var data, pokemon, pokemonType1, pokemonType2, pokemonMove, dadosPokemon, dadosPokemon;
+    var data, pokemon, pokemonType1, pokemonType2, pokemonMove, selectedType, dadosPokemon, dadosPokemon;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(id))];
@@ -61,10 +73,11 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
                     ? pokemon.types[1].type.name
                     : "";
                 pokemonMove = {
-                    name: 'attack',
+                    name: "attack",
                     type: pokemonType1,
-                    power: (Math.round(Math.random() * 1000))
+                    power: Math.round(Math.random() * 100)
                 };
+                selectedType = selectType.value;
                 if (pokemonType2 != null) {
                     dadosPokemon = {
                         id: pokemon.id,
@@ -92,9 +105,52 @@ var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, functi
         }
     });
 }); };
+var getPokemonByType = function (id, pokemonType) { return __awaiter(void 0, void 0, void 0, function () {
+    var data, pokemon, pokemonType1, pokemonType2, pokemonMove, selectedType, dadosPokemon;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, fetch("https://pokeapi.co/api/v2/pokemon/".concat(id))];
+            case 1:
+                data = _a.sent();
+                return [4 /*yield*/, data.json()];
+            case 2:
+                pokemon = _a.sent();
+                pokemonType1 = pokemon.types[0].type.name;
+                pokemonType2 = pokemon.types[1]
+                    ? pokemon.types[1].type.name
+                    : "";
+                pokemonMove = {
+                    name: "attack",
+                    type: pokemonType1,
+                    power: Math.round(Math.random() * 100)
+                };
+                selectedType = pokemonType;
+                if (selectedType !== "null") {
+                    if (pokemonType1 === selectedType || pokemonType2 === selectedType) {
+                        dadosPokemon = {
+                            id: pokemon.id,
+                            name: pokemon.name,
+                            image: "".concat(pokemon.sprites.front_default),
+                            type1: pokemonType1,
+                            type2: pokemonType2,
+                            url: "".concat(pokemon.species.url),
+                            move1: pokemonMove
+                        };
+                        showPokemon(dadosPokemon);
+                    }
+                }
+                return [2 /*return*/];
+        }
+    });
+}); };
 var fetchData = function (numOfPokemon) {
     for (var i = 1; i <= numOfPokemon; i++) {
         getPokemon(i);
+    }
+};
+var fetchDataByType = function (numOfPokemon) {
+    for (var i = 1; i <= numOfPokemon; i++) {
+        getPokemonByType(i, selectType.value);
     }
 };
 //# sourceMappingURL=index.js.map
